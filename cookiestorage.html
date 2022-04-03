@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Task 5 cookie storage</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <script src="https://cdn.rawgit.com/rainabba/jquery-table2excel/1.1.0/dist/jquery.table2excel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+    <style>
+        #slider {
+            width: 900px;
+            height: 400px;
+            margin: 10%;
+            margin-left: 15%;
+            overflow: hidden;
+        }
+
+        .slides {
+            display: block;
+            width: 6000px;
+            height: 400px;
+            margin-left: 0;
+            padding: 0;
+        }
+
+        .slide {
+            float: left;
+            list-style-type: none;
+            width: 900px;
+            height: 400px;
+        }
+
+        img {
+            width: 900px;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div class="row">
+        <div class="col text-center bg-primary text-white">
+            <header>
+                <h1> Task 5 cookies Storage</h1>
+
+                <center>
+                    <h4><u></u></h4>
+                </center>
+            </header>
+        </div>
+    </div>
+    
+    <div class="container-fluide p-4 tak1-container">
+
+        <form class="needs-validation p-4" novalidate>
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <label for="name">First name</label>
+                    <input type="text" class="form-control" id="name" pattern="^([a-zA-Z'-.]+(?: [a-zA-Z'-.]+)?)$" required>
+                    <div class="valid-feedback">
+                        Done!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please enter valid name.
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="mobile">Mobile Number</label>
+                    <input type="text" class="form-control" maxlength="10" id="mobile" pattern="[0-9]{10}" required>
+                    <div class="valid-feedback">
+                        Done!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please enter valid Number
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="emmail">Email</label>
+                    <input type="email" class="form-control" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="Email.." required>
+                    <div class="valid-feedback">
+                        Done!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please enter valid email.
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <label for="Collname">Collage Name</label>
+                    <input type="text" class="form-control" id="Collname" pattern="^[a-zA-Z ]*$" required>
+                    <div class="valid-feedback">
+                        Done!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please enter valid collage name.
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="branchName">Branch Name</label>
+                    <select class="custom-select form-control" id="branchName" required>
+                        <option selected disabled value="">Choose...</option>
+                        <option value="Computer Engineering">Computer Engineering</option>
+                        <option value="Civil Engineering">Civil Engineering</option>
+                        <option value="Mechanical Engineering">Mechanical Engineering</option>
+                        <option value="Electrical Engineering">Electrical Engineering</option>
+                    </select>
+                    <div class="valid-feedback">
+                        Done!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please enter Branch Name.
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="name">CGPA</label>
+                    <input type="text" class="form-control" maxlength="4" id="CGPA" pattern="\d\.\d{2}" required>
+                    <div class="valid-feedback">
+                        Done!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please enter valid CGPA.
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="state">State</label>
+                    <select class="custom-select form-control" id="state" required>
+                        <option selected disabled value="">Choose...</option>
+                        <option value="Gujarat">Gujarat</option>
+                        <option value="Mp">Mp</option>
+                        <option value="UP">UP</option>
+                        <option value="Bihar">Bihar</option>
+                    </select>
+                    <div class="valid-feedback">
+                        Done!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please enter Valid state.
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="city">City</label>
+                    <select class="custom-select form-control" id="city" required>
+                    </select>
+
+                    <div class="valid-feedback">
+                        Done!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please enter Valid city.
+                    </div>
+                </div>
+
+
+
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <label for="zip">Zip</label>
+                    <input type="text" class="form-control" id="zip" maxlength="6" pattern="^[0-9]+$" required>
+                    <div class="invalid-feedback">
+                        Please enter valid zip.
+                    </div>
+                    <div class="valid-feedback">
+                        Done!
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="date">From To Whare your study</label>
+                    <input type="text" name="datefilter" id="date" class="form-control" placeholder="Enter date" required />
+                    <div class="valid-feedback">
+                        Done!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please enter valid Date.
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="colorName">Select Color</label>
+                    <select class="custom-select form-control" id="colorName" required>
+                        <option selected disabled value="">Choose...</option>
+                        <option value="lightcoral">lightcoral</option>
+                        <option value="aqua">aqua</option>
+                        <option value="dodgerblue">dodgerblue</option>
+                        <option value="deepskyblue">deepskyblue</option>
+                        <option value="lightgreen">lightgreen</option>
+                        <option value="gray">gray</option>
+                    </select>
+                    <div class="valid-feedback">
+                        Done!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please enter Color Name.
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col">
+                    <button class="btn btn-primary" id="btnGenerate" type="submit">Add row</button>
+                    <button id="printbtn2" class="btn btn-success ">Export</button>
+                    <button class="btn btn-danger" type="button" id="btnReset">Reset Cookie</button>
+                </div>
+            </div>
+        </form>
+
+                <div id="slider">
+                    <ul class="slides">
+                        <li class="slide"><img src="https://images.unsplash.com/photo-1642936795750-ca25f7eab721?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80" /></li>
+                        <li class="slide"><img src="https://images.unsplash.com/photo-1643000726008-5745d15ab9db?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" /></li>
+                        <li class="slide"><img src="https://images.unsplash.com/photo-1593642532400-2682810df593?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80" /></li>
+                        <li class="slide"><img src="https://images.unsplash.com/photo-1642887896990-e28491a8b5b0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=775&q=80" /></li>
+                     
+                    </ul>
+                </div>
+
+        <div class="row">
+            <div class="p-4">
+                <table class="table table-striped" id="dvTable">
+                    <thead>
+
+                    </thead>
+                    <tbody id="tbody">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <br />
+    </div>  
+    <script>
+        $(function () {
+            //value for animation  
+            var width = 900;
+            var animationSpeed = 1000;
+            var pause = 3000;
+            var currentSlide = 1;
+            //Dom element.   
+            var $slider = $('#slider');
+            var $sliderAnimation = $slider.find('.slides');
+            var $slides = $sliderAnimation.find('.slide');
+
+            setInterval(function () {
+                $sliderAnimation.animate({ 'margin-left': '-=' + width }, animationSpeed, function () {
+                    currentSlide++;
+                    if (currentSlide === $slides.length) {
+                        $sliderAnimation.css('margin-left', 0);
+                        currentSlide = 1;
+                    }
+                });
+            }, pause);
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="cookiestorage.js"></script>
+
+</body>
+</html> 
